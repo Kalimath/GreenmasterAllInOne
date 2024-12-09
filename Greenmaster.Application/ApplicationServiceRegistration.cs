@@ -9,7 +9,8 @@ public static class ApplicationServiceRegistration
         var assemblies = AppDomain.CurrentDomain.GetAssemblies();
         
         services.AddAutoMapper(assemblies);
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assemblies));
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies
+            (AppDomain.CurrentDomain.GetAssemblies()));
         
         return services;
     }

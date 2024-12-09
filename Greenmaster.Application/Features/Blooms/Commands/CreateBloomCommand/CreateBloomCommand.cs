@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Greenmaster.Application.Features.Blooms.Commands.CreateBloomCommand;
 
-public class CreateBloomCommand : IRequest<Guid>
+public class CreateBloomCommand : IRequest<CreateBloomCommandResponse>
 {
     public required Month[] Period { get; set; }
     public bool IsFragrant { get; set; }

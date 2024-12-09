@@ -16,7 +16,7 @@ public class MappingProfile : Profile
         CreateMap<Plant, PlantDetailDto>().ReverseMap();
         
         //Bloom
-        CreateMap<Bloom, BloomDto>().ReverseMap();
+        CreateMap<Bloom, BloomListDto>().ReverseMap();
         CreateMap<Bloom, BloomDetailDto>().ReverseMap();
         CreateMap<Bloom, CreateBloomCommand>().ReverseMap();
             

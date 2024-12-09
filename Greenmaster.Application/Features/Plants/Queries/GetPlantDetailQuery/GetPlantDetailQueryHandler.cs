@@ -20,7 +20,7 @@ public class GetPlantDetailQueryHandler(
         
         var bloom = await bloomRepository.GetByIdAsync(plant.BloomId);
         
-        plantDetailDto.Bloom = mapper.Map<BloomDto>(bloom);
+        plantDetailDto.BloomList = mapper.Map<BloomListDto>(bloom);
         
         return plantDetailDto;
     }

@@ -13,7 +13,7 @@ public class PlantDetailDto
     public string ScientificName { get; set; }
 
     public Guid BloomId { get; set; }
-    public BloomDto Bloom { get; set; } = default!;
+    public BloomListDto BloomList { get; set; } = default!;
     
     public string Description { get; set; }
     public string ImageUrl { get; set; }

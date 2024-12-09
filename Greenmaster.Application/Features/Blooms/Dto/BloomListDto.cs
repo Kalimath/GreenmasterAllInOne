@@ -1,6 +1,6 @@
 namespace Greenmaster.Application.Features.Blooms.Dto;
 
-public class BloomDto
+public class BloomListDto
 {
     public Guid Id { get; set; }
     public string Period { get; set; }
