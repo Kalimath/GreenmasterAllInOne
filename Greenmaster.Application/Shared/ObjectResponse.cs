@@ -1,6 +1,6 @@
 namespace Greenmaster.Application.Shared;
 
-public class BaseResponse<T> where T : class 
+public class ObjectResponse<T> where T : class 
 {
     public bool Success { get; set; }
     
@@ -8,18 +8,18 @@ public class BaseResponse<T> where T : class
     public T? Data { get; set; }
     public List<string>? ValidationErrors { get; set; } = [];
     
-    public BaseResponse()
+    public ObjectResponse()
     {
         Success = true;
     }
 
-    public BaseResponse(string message)
+    public ObjectResponse(string message)
     {
         Success = false;
         Message = message;
     }
     
-    public BaseResponse(string message, bool success)
+    public ObjectResponse(string message, bool success)
     {
         Success = success;
         Message = message;
