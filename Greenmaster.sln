@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenmaster.Infrastructure"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenmaster.Api", "Greenmaster.Api\Greenmaster.Api.csproj", "{A14638F1-5A5C-4F7D-9745-96365357F8C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenmaster.Application.Tests", "Greenmaster.Application.Tests\Greenmaster.Application.Tests.csproj", "{E30E6435-357A-43CB-8129-BEBD5D741DF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,7 @@ Global
 		{080ED77B-DD4B-4880-BC71-6A3851444880} = {EBF9F643-2F4F-4321-B0B7-E17D6B298B24}
 		{70C9B6F0-DEB4-4FAA-835C-D39B4652A1C8} = {EBF9F643-2F4F-4321-B0B7-E17D6B298B24}
 		{A14638F1-5A5C-4F7D-9745-96365357F8C3} = {E37FD89E-EE37-4C11-BEEB-8E22A9AE428F}
+		{E30E6435-357A-43CB-8129-BEBD5D741DF2} = {8F30EC09-8C01-4067-8323-A66E7160298B}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8C407A31-B861-4A4B-A16F-64128A275980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -59,5 +62,9 @@ Global
 		{A14638F1-5A5C-4F7D-9745-96365357F8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A14638F1-5A5C-4F7D-9745-96365357F8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A14638F1-5A5C-4F7D-9745-96365357F8C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E30E6435-357A-43CB-8129-BEBD5D741DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E30E6435-357A-43CB-8129-BEBD5D741DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E30E6435-357A-43CB-8129-BEBD5D741DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E30E6435-357A-43CB-8129-BEBD5D741DF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
