@@ -1,6 +1,7 @@
 using Greenmaster.Application;
 using Greenmaster.Infrastructure;
 using Greenmaster.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace Greenmaster.Api;
 
@@ -39,5 +40,26 @@ public static class StartupExtensions
         app.MapControllers();
         
         return app;
+    }
+
+    /// <summary>
+    /// Resets database when application starts
+    /// </summary>
+    public static async Task ResetDatabaseAsync(this WebApplication app)
+    {
+        try
+        {
+            using var scope = app.Services.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<BotanicalDbContext>();
+            if (dbContext is not null)
+            {
+                await dbContext.Database.EnsureDeletedAsync();
+                await dbContext.Database.MigrateAsync();
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 }
