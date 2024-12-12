@@ -1,6 +1,5 @@
 using AutoMapper;
 using Greenmaster.Application.Contracts.Persistence;
-using Greenmaster.Application.Exceptions;
 using Greenmaster.Application.Features.Blooms.Dto;
 using Greenmaster.Application.Shared;
 using Greenmaster.Domain.Entities;

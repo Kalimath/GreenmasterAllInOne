@@ -1,3 +1,4 @@
+using Greenmaster.Application.Contracts.API;
 using Greenmaster.Application.Features.Blooms.Commands.CreateBloomCommand;
 using Greenmaster.Application.Features.Blooms.Commands.DeleteBloomCommand;
 using Greenmaster.Application.Features.Blooms.Commands.UpdateBloomCommand;
@@ -6,16 +7,18 @@ using Greenmaster.Application.Features.Blooms.Queries.GetBloomDetailQuery;
 using Greenmaster.Application.Features.Blooms.Queries.GetBloomsQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Filters;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace Greenmaster.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route(BloomApi.Route)]
+[Consumes("application/json")]
 public class BloomController(IMediator mediatr) : ControllerBase
 {
     [HttpGet("all", Name = "GetAllBlooms")]
-    [ProducesResponseType(Status200OK)]
+    [SwaggerResponseExample(Status200OK, typeof(IEnumerable<BloomListDto>))]
     public async Task<ActionResult<List<BloomListDto>>> Index()
     {
         var blooms = await mediatr.Send(new GetBloomsQuery());
@@ -31,7 +34,7 @@ public class BloomController(IMediator mediatr) : ControllerBase
         return Accepted(response);
     }
 
-    [HttpGet("{id}", Name = "GetBloomById")]
+    [HttpGet("{id:guid}", Name = "GetBloomById")]
     [ProducesResponseType(Status200OK)] 
     [ProducesResponseType(Status404NotFound)]
     public async Task<ActionResult<BloomDetailDto>> GetById(Guid id)
@@ -49,7 +52,7 @@ public class BloomController(IMediator mediatr) : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{id}", Name = "DeleteBloom")]
+    [HttpDelete("{id:guid}", Name = "DeleteBloom")]
     [ProducesResponseType(Status204NoContent)]
     [ProducesResponseType(Status404NotFound)]
     public async Task<IActionResult> Delete(Guid id)

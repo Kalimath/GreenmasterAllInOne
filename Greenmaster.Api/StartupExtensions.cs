@@ -26,7 +26,7 @@ public static class StartupExtensions
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials()));
-
+        
         builder.Services.AddSwaggerGen();
         
         return builder.Build();
@@ -40,9 +40,9 @@ public static class StartupExtensions
         app.UseCors("open");
         if (app.Environment.IsDevelopment())
         {
-            app.UseDeveloperExceptionPage();
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.UseDeveloperExceptionPage();
         }
         app.UseHttpsRedirection();
         app.MapControllers();
